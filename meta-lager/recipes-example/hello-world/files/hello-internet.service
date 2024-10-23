@@ -1,0 +1,10 @@
+[Unit]
+Description=Send HTTP POST with wget to webhook.site
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/wget --post-data="message=hello internet" https://webhook.site/f60e4825-dbbc-4fc2-b62c-ac667ada8431 -O /dev/null
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
